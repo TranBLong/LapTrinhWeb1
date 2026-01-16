@@ -20,4 +20,27 @@ public class StudentController {
         model.addAttribute("students", students);
         return "students"; // students.html
     }
+
+    @GetMapping("/students/{id}")
+    public String getStudentDetail(@PathVariable int id, Model model) {
+        Student student = studentService.getStudentById(id);
+        if (student != null) {
+            model.addAttribute("student", student);
+            return "student-detail"; // student-detail.html
+        }
+        return "redirect:/students";
+    }
+
+    @GetMapping("/students/search/result")
+    public String searchStudents(@RequestParam(required = false) String keyword, Model model) {
+        List<Student> students;
+        if (keyword != null && !keyword.trim().isEmpty()) {
+            students = studentService.searchStudentsByName(keyword);
+            model.addAttribute("keyword", keyword);
+        } else {
+            students = studentService.getAllStudents();
+        }
+        model.addAttribute("students", students);
+        return "students"; // students.html
+    }
 }
