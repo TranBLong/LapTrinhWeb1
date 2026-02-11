@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8080/api/users";
+const API_BASE = "https://laptrinhweb1-7wap.onrender.com/api/users";
 
 function loadUsers() {
   fetch(API_BASE).then((res) => res.json()).then(renderUsers);
