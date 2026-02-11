@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User - Role Management</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <script src="js/user_roles.js" defer></script>
+  </head>
+  <body>
+    <div class="top-nav">
+      <button onclick="location.href = 'users.html'">Users</button>
+      <button onclick="location.href = 'roles.html'">Roles</button>
+      <button onclick="location.href = 'permissions.html'">Permissions</button>
+      <button onclick="location.href = 'user_roles.html'">User Roles</button>
+      <button onclick="location.href = 'role_permissions.html'">Role Permissions</button>
+    </div>
+
+    <h1>Quản lý User - Role</h1>
+
+    <h2>Gán role cho user</h2>
+    <div class="form-row">
+      <input id="userId" placeholder="User ID" size="40" />
+      <input id="roleId" placeholder="Role ID" size="40" />
+      <button type="button" class="primary" onclick="assignRole()">Gán role</button>
+    </div>
+
+    <h2>Lọc</h2>
+    <div class="filter-row">
+      <div>
+        <input id="filterUserId" placeholder="User ID" size="40" />
+        <button type="button" onclick="loadByUser()">Xem</button>
+      </div>
+      <div>
+        <input id="filterRoleId" placeholder="Role ID" size="40" />
+        <button type="button" onclick="loadByRole()">Xem</button>
+      </div>
+    </div>
+
+    <h2>Danh sách user_roles</h2>
+    <button class="primary" onclick="loadAll()">Tải danh sách</button>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>User ID</th>
+          <th>Role ID</th>
+          <th>Trạng thái</th>
+          <th>Thao tác</th>
+        </tr>
+      </thead>
+      <tbody id="data"></tbody>
+    </table>
+  </body>
+</html>

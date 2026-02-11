@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Management</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <script src="js/users.js" defer></script>
+</head>
+<body>
+
+<div class="top-nav">
+    <button onclick="location.href='users.html'">Users</button>
+    <button onclick="location.href='roles.html'">Roles</button>
+    <button onclick="location.href='permissions.html'">Permissions</button>
+    <button onclick="location.href='user_roles.html'">User Roles</button>
+    <button onclick="location.href='role_permissions.html'">Role Permissions</button>
+</div>
+
+<h1>Quản lý người dùng</h1>
+
+<div class="search-bar">
+    <input
+        id="searchKeyword"
+        placeholder="Tìm theo username, họ tên, email, số điện thoại"
+        onkeydown="if(event.key==='Enter'){searchUsers();}"
+    />
+    <button onclick="searchUsers()">Tìm kiếm</button>
+    <button onclick="clearSearch()">Xóa lọc</button>
+</div>
+
+<h2>Tạo user mới</h2>
+<form class="form-row" onsubmit="createUser(event)">
+    <input id="username" placeholder="Username" required />
+    <input id="password" type="password" placeholder="Password" required />
+    <input id="fullName" placeholder="Họ tên" />
+    <input id="email" placeholder="Email" />
+    <input id="phone" placeholder="Số điện thoại" />
+    <select id="userType">
+        <option value="ADMIN">ADMIN</option>
+        <option value="GIAOVU">GIAOVU</option>
+        <option value="GIANGVIEN">GIANGVIEN</option>
+        <option value="SINHVIEN">SINHVIEN</option>
+    </select>
+    <button type="submit">Tạo user</button>
+</form>
+
+<button class="primary" onclick="loadUsers()">Tải danh sách user</button>
+
+<table id="userTable">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Họ tên</th>
+            <th>Email</th>
+            <th>Loai</th>
+            <th>Active</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+</body>
+</html>

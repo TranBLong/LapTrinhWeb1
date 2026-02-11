@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quản lý Role - Permission</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <script src="js/role_permissions.js" defer></script>
+</head>
+<body>
+
+<div class="top-nav">
+    <button onclick="location.href='users.html'">Users</button>
+    <button onclick="location.href='roles.html'">Roles</button>
+    <button onclick="location.href='permissions.html'">Permissions</button>
+    <button onclick="location.href='user_roles.html'">User Roles</button>
+    <button onclick="location.href='role_permissions.html'">Role Permissions</button>
+</div>
+
+<h2>Quản lý Role - Permission</h2>
+
+<div class="box">
+    <h3>Gán Permission cho Role</h3>
+    <span class="inline-field">
+      <label>Role ID:</label>
+      <input type="text" id="roleId" size="40">
+    </span>
+    <span class="inline-field">
+      <label>Permission ID:</label>
+      <input type="text" id="permissionId" size="40">
+    </span>
+    <button id="submitBtn" class="primary" onclick="assignPermission()">Gán</button>
+</div>
+
+<div class="box">
+    <h3>Lọc</h3>
+    <input type="text" id="filterRoleId" placeholder="Role ID">
+    <button onclick="loadByRole()">Xem theo Role</button>
+
+    <input type="text" id="filterPermissionId" placeholder="Permission ID">
+    <button onclick="loadByPermission()">Xem theo Permission</button>
+
+    <button class="primary" onclick="loadAll()">Xem tất cả</button>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Role ID</th>
+            <th>Permission ID</th>
+            <th>Trạng thái</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
+
+</body>
+</html>

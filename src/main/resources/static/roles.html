@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Role Management</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <script src="js/roles.js" defer></script>
+</head>
+<body>
+
+<div class="top-nav">
+    <button onclick="location.href='users.html'">Users</button>
+    <button onclick="location.href='roles.html'">Roles</button>
+    <button onclick="location.href='permissions.html'">Permissions</button>
+    <button onclick="location.href='user_roles.html'">User Roles</button>
+    <button onclick="location.href='role_permissions.html'">Role Permissions</button>
+</div>
+
+<h1>Quản lý vai trò (Roles)</h1>
+
+<div class="search-bar">
+    <input
+        id="searchKeyword"
+        placeholder="Tìm theo role code, tên vai trò, mô tả"
+        onkeydown="if(event.key==='Enter'){searchRoles();}"
+    />
+    <button onclick="searchRoles()">Tìm kiếm</button>
+    <button onclick="clearSearch()">Xóa lọc</button>
+</div>
+
+<h2>Tạo role mới</h2>
+<form class="form-row" onsubmit="createRole(event)">
+    <input id="roleCode" placeholder="Role Code (ADMIN...)" required />
+    <input id="roleName" placeholder="Tên vai trò" required />
+    <input id="description" placeholder="Mô tả" />
+    <select id="isSystem">
+        <option value="false">Không</option>
+        <option value="true">Có</option>
+    </select>
+    <button type="submit">Tạo role</button>
+</form>
+
+<button class="primary" onclick="loadRoles()">Tải danh sách role</button>
+
+<table id="roleTable">
+    <thead>
+        <tr>
+            <th>Role Code</th>
+            <th>Tên vai trò</th>
+            <th>Mô tả</th>
+            <th>System</th>
+            <th>Active</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+</body>
+</html>
