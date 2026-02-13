@@ -55,6 +55,8 @@ CREATE TABLE roles (
 );
 
 -- USER_ROLES
+DROP TABLE IF EXISTS user_roles CASCADE;
+
 CREATE TABLE user_roles (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
 
@@ -62,6 +64,13 @@ CREATE TABLE user_roles (
     role_id UUID NOT NULL,
 
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP,
+
+    created_by UUID,
+    updated_by UUID,
+
+    deleted_at TIMESTAMP,
+    deleted_by UUID,
 
     is_active BOOLEAN NOT NULL DEFAULT TRUE,
 
@@ -75,6 +84,8 @@ CREATE TABLE user_roles (
 );
 
 -- PERMISSIONS
+DROP TABLE IF EXISTS permissions CASCADE;
+
 CREATE TABLE permissions (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
 
@@ -84,11 +95,21 @@ CREATE TABLE permissions (
     description VARCHAR(255),
 
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP,
+
+    created_by UUID,
+    updated_by UUID,
+
+    deleted_at TIMESTAMP,
+    deleted_by UUID,
 
     is_active BOOLEAN NOT NULL DEFAULT TRUE
 );
 
+
 -- ROLE_PERMISSIONS
+DROP TABLE IF EXISTS role_permissions CASCADE;
+
 CREATE TABLE role_permissions (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
 
@@ -96,6 +117,13 @@ CREATE TABLE role_permissions (
     permission_id UUID NOT NULL,
 
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP,
+
+    created_by UUID,
+    updated_by UUID,
+
+    deleted_at TIMESTAMP,
+    deleted_by UUID,
 
     is_active BOOLEAN NOT NULL DEFAULT TRUE,
 
