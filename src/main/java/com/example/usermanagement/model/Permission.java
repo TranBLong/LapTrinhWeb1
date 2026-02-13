@@ -11,7 +11,7 @@ public class Permission {
     @Id
     @GeneratedValue
     @org.hibernate.annotations.UuidGenerator
-    @Column(columnDefinition = "uniqueidentifier")
+    @Column(columnDefinition = "uuid")
     private UUID id;
 
     @Column(name = "permission_code", nullable = false, unique = true, length = 100)

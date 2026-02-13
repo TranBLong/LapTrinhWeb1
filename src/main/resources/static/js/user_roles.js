@@ -1,4 +1,4 @@
-const API = "http://localhost:8080/api/user-roles";
+const API = "https://laptrinhweb1-7wap.onrender.com/api/user-roles";
 
 function loadAll() {
   fetch(API).then((r) => r.json()).then(render);

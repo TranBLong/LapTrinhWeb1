@@ -14,7 +14,7 @@ public class UserRole {
     @Id
     @GeneratedValue
     @org.hibernate.annotations.UuidGenerator
-    @Column(columnDefinition = "uniqueidentifier")
+    @Column(columnDefinition = "uuid")
     private UUID id;
 
     @ManyToOne

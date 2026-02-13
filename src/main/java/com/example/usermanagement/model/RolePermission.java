@@ -14,7 +14,7 @@ public class RolePermission {
     @Id
     @GeneratedValue
     @org.hibernate.annotations.UuidGenerator
-    @Column(columnDefinition = "uniqueidentifier")
+    @Column(columnDefinition = "uuid")
     private UUID id;
 
     @ManyToOne

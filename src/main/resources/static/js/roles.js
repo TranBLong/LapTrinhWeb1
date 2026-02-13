@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8080/api/roles";
+const API_BASE = "https://laptrinhweb1-7wap.onrender.com/api/roles";
 
 function loadRoles() {
   fetch(API_BASE).then((res) => res.json()).then(renderRoles);

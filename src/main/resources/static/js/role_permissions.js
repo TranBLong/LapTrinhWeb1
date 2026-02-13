@@ -1,4 +1,4 @@
-const API_BASE = "/api/role-permissions";
+const API_BASE = "https://laptrinhweb1-7wap.onrender.com/api/role-permissions";
 let editingId = null;
 
 function loadAll() {

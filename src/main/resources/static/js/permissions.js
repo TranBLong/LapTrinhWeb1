@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8080/api/permissions";
+const API_BASE = "https://laptrinhweb1-7wap.onrender.com/api/permissions";
 let basePermissions = [];
 
 function loadPermissions() {
