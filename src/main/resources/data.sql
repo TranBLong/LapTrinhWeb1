@@ -1,4 +1,4 @@
-﻿-- Tạo 10 roles
+-- Tạo 10 roles
 INSERT INTO roles (role_code, role_name)
 SELECT 
     'ROLE_' || i,
