@@ -4,11 +4,6 @@ DROP TABLE IF EXISTS permissions CASCADE;
 DROP TABLE IF EXISTS roles CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
 
-CREATE DATABASE usermanage;
-
--- Kết nối DB (nếu dùng psql)
--- \c usermanage;
-
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
 -- USERS
